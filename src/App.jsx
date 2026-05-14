@@ -1,0 +1,169 @@
+import React, { useState } from "react";
+
+export default function App() {
+  const [showForm, setShowForm] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState("Starter");
+
+  const packages = [
+    { name: "Starter", price: "₹149", premium: false },
+    { name: "Basic", price: "₹349", premium: false },
+    { name: "Advanced", price: "₹549", premium: false },
+    { name: "Golden Pro", price: "₹1149", premium: true },
+    { name: "Golden Elite", price: "₹1599", premium: true },
+    { name: "Golden Empire", price: "₹2499", premium: true },
+  ];
+
+  const handleEnroll = (pkg) => {
+    setSelectedPackage(pkg);
+    setShowForm(true);
+    window.scrollTo(0, 0);
+  };
+
+  const handleSubmit = () => {
+    alert("Request Submitted Successfully");
+  };
+
+  const footerLink = {
+    color: "#aaa",
+    textDecoration: "none",
+    fontSize: "18px",
+  };
+
+  const inputStyle = {
+    width: "100%",
+    padding: "18px",
+    marginBottom: "18px",
+    borderRadius: "16px",
+    border: "1px solid #333",
+    background: "#0a0a0a",
+    color: "white",
+    fontSize: "16px",
+  };
+
+  const styles = {
+    page: {
+      backgroundColor: "#000",
+      color: "white",
+      minHeight: "100vh",
+      fontFamily: "Arial, sans-serif",
+    },
+    nav: {
+      position: "fixed",
+      top: 0,
+      width: "100%",
+      padding: "20px",
+      background: "rgba(0,0,0,0.7)",
+      display: "flex",
+      justifyContent: "space-between",
+    },
+    hero: {
+      height: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      textAlign: "center",
+    },
+    section: {
+      padding: "100px 20px",
+      maxWidth: "1200px",
+      margin: "auto",
+    },
+    grid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
+      gap: "20px",
+    },
+    card: {
+      background: "#111",
+      padding: "30px",
+      borderRadius: "20px",
+    },
+    premiumCard: {
+      background: "linear-gradient(180deg,#3b2a00,#111)",
+      padding: "30px",
+      borderRadius: "20px",
+    },
+    button: {
+      width: "100%",
+      padding: "15px",
+      marginTop: "20px",
+      borderRadius: "12px",
+      border: "none",
+      cursor: "pointer",
+    },
+    formWrapper: {
+      display: "flex",
+      justifyContent: "center",
+      paddingTop: "120px",
+    },
+    form: {
+      width: "500px",
+      background: "#111",
+      padding: "30px",
+      borderRadius: "20px",
+    },
+  };
+
+  return (
+    <div style={styles.page}>
+      <nav style={styles.nav}>
+        <h1>SeviTrusted</h1>
+      </nav>
+
+      {!showForm ? (
+        <>
+          <section style={styles.hero}>
+            <p>PREMIUM AFFILIATE AGENCY</p>
+            <h1 style={{ fontSize: "60px" }}>SeviTrusted Growth</h1>
+          </section>
+
+          <section style={styles.section}>
+            <h2>Packages</h2>
+
+            <div style={styles.grid}>
+              {packages.map((pkg, i) => (
+                <div key={i} style={pkg.premium ? styles.premiumCard : styles.card}>
+                  <h3>{pkg.name}</h3>
+                  <h1>{pkg.price}</h1>
+
+                  <button onClick={() => handleEnroll(pkg.name)} style={styles.button}>
+                    Enroll
+                  </button>
+                </div>
+              ))}
+            </div>
+          </section>
+        </>
+      ) : (
+        <div style={styles.formWrapper}>
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            onSubmit={handleSubmit}
+            style={styles.form}
+          >
+            <h1>Enrollment Form</h1>
+
+            <input type="hidden" name="access_key" value="PASTE_YOUR_ACCESS_KEY" />
+
+            <input name="firstName" placeholder="First Name" required style={inputStyle} />
+            <input name="lastName" placeholder="Last Name" required style={inputStyle} />
+            <input name="email" placeholder="Email" required style={inputStyle} />
+            <input name="phone" placeholder="Phone" required style={inputStyle} />
+
+            <select name="package" defaultValue={selectedPackage} style={inputStyle}>
+              {packages.map((p, i) => (
+                <option key={i}>{p.name}</option>
+              ))}
+            </select>
+
+            <button type="submit" style={styles.button}>
+              Submit
+            </button>
+          </form>
+        </div>
+      )}
+    </div>
+  );
+}
