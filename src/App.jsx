@@ -288,6 +288,69 @@ export default function App() {
     ))}
   </div>
 </section>
+<section
+  style={{
+    padding: "100px 20px",
+    textAlign: "center",
+    borderTop: "1px solid #222",
+  }}
+>
+  <h2
+    style={{
+      fontSize: "48px",
+      marginBottom: "30px",
+    }}
+  >
+    Contact Us
+  </h2>
+
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      gap: "25px",
+      flexWrap: "wrap",
+    }}
+  >
+    <a
+      href="https://wa.me/917085586011"
+      target="_blank"
+      rel="noreferrer"
+      style={{
+        color: "#aaa",
+        textDecoration: "none",
+        fontSize: "20px",
+      }}
+    >
+      WhatsApp
+    </a>
+
+    <a
+      href="https://instagram.com/_2us.me_"
+      target="_blank"
+      rel="noreferrer"
+      style={{
+        color: "#aaa",
+        textDecoration: "none",
+        fontSize: "20px",
+      }}
+    >
+      Instagram
+    </a>
+
+    <a
+      href="#"
+      style={{
+        color: "#555",
+        textDecoration: "none",
+        fontSize: "20px",
+        cursor: "default",
+      }}
+    >
+      Facebook
+    </a>
+  </div>
+</section>
         </>
       ) : (
         <div style={styles.formWrapper}>
