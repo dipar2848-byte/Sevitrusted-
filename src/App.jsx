@@ -134,6 +134,71 @@ export default function App() {
               ))}
             </div>
           </section>
+<section
+  style={{
+    padding: '120px 20px',
+    background: '#050505',
+  }}
+>
+  <h2
+    style={{
+      textAlign: 'center',
+      fontSize: '52px',
+      marginBottom: '70px',
+    }}
+  >
+    Why Choose SeviTrusted
+  </h2>
+
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))',
+      gap: '30px',
+      maxWidth: '1200px',
+      margin: 'auto',
+    }}
+  >
+    {[
+      {
+        title: 'Premium Growth',
+        text: 'Modern growth systems designed for creators and online businesses.',
+      },
+      {
+        title: 'Fast Support',
+        text: 'Quick response support and direct communication for clients.',
+      },
+      {
+        title: 'Luxury Branding',
+        text: 'High-end visuals and conversion focused strategies.',
+      },
+    ].map((item, i) => (
+      <div
+        key={i}
+        style={{
+          background: '#111',
+          padding: '40px',
+          borderRadius: '24px',
+          border: '1px solid #222',
+        }}
+      >
+        <h3 style={{ fontSize: '28px', marginBottom: '18px' }}>
+          {item.title}
+        </h3>
+
+        <p
+          style={{
+            color: '#999',
+            lineHeight: 1.8,
+            fontSize: '17px',
+          }}
+        >
+          {item.text}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>
         </>
       ) : (
         <div style={styles.formWrapper}>
