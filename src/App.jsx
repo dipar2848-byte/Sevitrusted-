@@ -413,7 +413,42 @@ const [showPayment, setShowPayment] = useState(false);
                 <option key={i}>{p.name}</option>
               ))}
             </select>
+<div
+  style={{
+    marginTop: '40px',
+    padding: '30px',
+    border: '1px solid #222',
+    borderRadius: '20px',
+    background: '#0a0a0a',
+  }}
+>
+  <h2
+    style={{
+      marginBottom: '25px',
+      fontSize: '30px',
+    }}
+  >
+    Payment Method
+  </h2>
 
+  <button
+    type="button"
+    onClick={() => setShowPayment(true)}
+    style={{
+      width: '100%',
+      padding: '18px',
+      borderRadius: '16px',
+      border: 'none',
+      background: 'white',
+      color: 'black',
+      fontWeight: 'bold',
+      cursor: 'pointer',
+      fontSize: '16px',
+    }}
+  >
+    Pay Using UPI
+  </button>
+</div>
             <button type="submit" style={styles.button}>
               Submit
             </button>
