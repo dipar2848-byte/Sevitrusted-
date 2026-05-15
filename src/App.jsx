@@ -371,7 +371,7 @@ export default function App() {
 <input
   type="hidden"
   name="redirect"
-  value="https://YOUR-VERCEL-URL.vercel.app"
+  value="https://sevitrusted.vercel.app/"
 />
 
             <input name="firstName" placeholder="First Name" required style={inputStyle} />
