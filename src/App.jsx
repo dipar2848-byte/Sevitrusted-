@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 export default function App() {
   const [showForm, setShowForm] = useState(false);
+const [showPayment, setShowPayment] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState("Starter");
 
   const packages = [
