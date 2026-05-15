@@ -237,6 +237,57 @@ export default function App() {
     ))}
   </div>
 </section>
+<section
+  style={{
+    padding: '120px 20px',
+    maxWidth: '1200px',
+    margin: 'auto',
+  }}
+>
+  <h2
+    style={{
+      textAlign: 'center',
+      fontSize: '52px',
+      marginBottom: '60px',
+    }}
+  >
+    Client Reviews
+  </h2>
+
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))',
+      gap: '30px',
+    }}
+  >
+    {[
+      'Professional service and clean communication throughout the process.',
+      'The premium plans helped improve our online growth quickly.',
+      'Luxury design and smooth support experience from start to finish.',
+    ].map((review, i) => (
+      <div
+        key={i}
+        style={{
+          background: '#111',
+          padding: '40px',
+          borderRadius: '24px',
+          border: '1px solid #222',
+        }}
+      >
+        <p
+          style={{
+            color: '#bbb',
+            lineHeight: 1.8,
+            fontSize: '17px',
+          }}
+        >
+          “{review}”
+        </p>
+      </div>
+    ))}
+  </div>
+</section>
         </>
       ) : (
         <div style={styles.formWrapper}>
