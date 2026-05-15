@@ -199,6 +199,44 @@ export default function App() {
     ))}
   </div>
 </section>
+<section
+  style={{
+    padding: '100px 20px',
+    borderTop: '1px solid #111',
+    borderBottom: '1px solid #111',
+  }}
+>
+  <div
+    style={{
+      maxWidth: '1100px',
+      margin: 'auto',
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))',
+      gap: '30px',
+      textAlign: 'center',
+    }}
+  >
+    {[
+      ['120+', 'Clients'],
+      ['98%', 'Satisfaction'],
+      ['24/7', 'Support'],
+      ['6', 'Premium Plans'],
+    ].map((stat, i) => (
+      <div key={i}>
+        <h1
+          style={{
+            fontSize: '58px',
+            marginBottom: '10px',
+          }}
+        >
+          {stat[0]}
+        </h1>
+
+        <p style={{ color: '#888', fontSize: '18px' }}>{stat[1]}</p>
+      </div>
+    ))}
+  </div>
+</section>
         </>
       ) : (
         <div style={styles.formWrapper}>
