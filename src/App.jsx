@@ -361,7 +361,35 @@ const [showPayment, setShowPayment] = useState(false);
             onSubmit={handleSubmit}
             style={styles.form}
           >
-            <h1>Enrollment Form</h1>
+            <h1><div
+  style={{
+    display: 'flex',
+    alignItems: 'center',
+    gap: '16px',
+    marginBottom: '30px',
+  }}
+>
+  <button
+    type="button"
+    onClick={() => setShowForm(false)}
+    style={{
+      background: 'transparent',
+      border: '1px solid #333',
+      color: 'white',
+      width: '44px',
+      height: '44px',
+      borderRadius: '50%',
+      cursor: 'pointer',
+      fontSize: '20px',
+    }}
+  >
+    ←
+  </button>
+
+  <h1 style={{ fontSize: '48px', margin: 0 }}>
+    Enrollment Form
+  </h1>
+</div></h1>
 
             <input
   type="hidden"
