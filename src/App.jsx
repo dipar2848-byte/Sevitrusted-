@@ -355,6 +355,78 @@ const [showPayment, setShowPayment] = useState(false);
         </>
       ) : (
         <div style={styles.formWrapper}>
+{showPayment && (
+  <div
+    style={{
+      position: 'fixed',
+      inset: 0,
+      background: 'rgba(0,0,0,0.95)',
+      zIndex: 3000,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '20px',
+    }}
+  >
+    <div
+      style={{
+        background: '#111',
+        padding: '40px',
+        borderRadius: '30px',
+        width: '100%',
+        maxWidth: '450px',
+        textAlign: 'center',
+        border: '1px solid #222',
+      }}
+    >
+      <button
+        type="button"
+        onClick={() => setShowPayment(false)}
+        style={{
+          background: 'transparent',
+          border: '1px solid #333',
+          color: 'white',
+          width: '42px',
+          height: '42px',
+          borderRadius: '50%',
+          cursor: 'pointer',
+          fontSize: '20px',
+          marginBottom: '20px',
+        }}
+      >
+        ←
+      </button>
+
+      <h1
+        style={{
+          marginBottom: '25px',
+          fontSize: '36px',
+        }}
+      >
+        UPI Payment
+      </h1>
+
+      <img
+        src="YOUR_IMAGE_URL_HERE"
+        alt="UPI QR"
+        style={{
+          width: '250px',
+          borderRadius: '20px',
+          marginBottom: '25px',
+        }}
+      />
+
+      <p
+        style={{
+          color: '#aaa',
+          lineHeight: 1.8,
+        }}
+      >
+        Scan the QR code using any UPI app.
+      </p>
+    </div>
+  </div>
+)}
           <form
             action="https://api.web3forms.com/submit"
             method="POST"
