@@ -341,7 +341,7 @@ margin: "0 auto",
       marginBottom: "30px",
     }}
   >
-    Contact Us
+    Contact Us here!
   </h2>
 
   <div
