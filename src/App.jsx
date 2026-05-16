@@ -99,7 +99,9 @@ const [showPayment, setShowPayment] = useState(false);
       paddingTop: "120px",
     },
     form: {
-      width: "500px",
+      width: "100%",
+maxWidth: "500px",
+boxSizing: "border-box",
       background: "#111",
       padding: "30px",
       borderRadius: "20px",
