@@ -31,15 +31,16 @@ const [showPayment, setShowPayment] = useState(false);
   };
 
   const inputStyle = {
-    width: "100%",
-    padding: "18px",
-    marginBottom: "18px",
-    borderRadius: "16px",
-    border: "1px solid #333",
-    background: "#0a0a0a",
-    color: "white",
-    fontSize: "16px",
-  };
+  width: "100%",
+  padding: "18px",
+  marginBottom: "18px",
+  borderRadius: "16px",
+  border: "1px solid #333",
+  background: "#0a0a0a",
+  color: "white",
+  fontSize: "16px",
+  boxSizing: "border-box",
+};
 
   const styles = {
     page: {
