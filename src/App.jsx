@@ -94,10 +94,13 @@ const [showPayment, setShowPayment] = useState(false);
       cursor: "pointer",
     },
     formWrapper: {
-      display: "flex",
-      justifyContent: "center",
-      paddingTop: "120px",
-    },
+  minHeight: "100vh",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  padding: "120px 20px",
+  boxSizing: "border-box",
+},
     form: {
       width: "100%",
 maxWidth: "500px",
