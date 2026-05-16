@@ -105,6 +105,7 @@ const [showPayment, setShowPayment] = useState(false);
       width: "100%",
 maxWidth: "500px",
 boxSizing: "border-box",
+margin: "0 auto",
       background: "#111",
       padding: "30px",
       borderRadius: "20px",
