@@ -562,3 +562,27 @@ const [showPayment, setShowPayment] = useState(false);
     </div>
   );
 }
+const flameStyle = document.createElement('style');
+flameStyle.innerHTML = `
+@keyframes flameMove {
+  0% {
+    transform: translateX(-40%) skewX(-20deg);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translateX(40%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+`;
+
+document.head.appendChild(flameStyle);
