@@ -497,9 +497,14 @@ margin: "0 auto",
     ←
   </button>
 
-  <h1 style={{ fontSize: '48px', margin: 0 }}>
-    Enrollment Form
-  </h1>
+  <h1
+  style={{
+    fontSize: "48px",
+    margin: 0,
+  }}
+>
+  Enrollment Form
+</h1>
 </div></h1>
 
             <input
