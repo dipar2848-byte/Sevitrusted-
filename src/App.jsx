@@ -109,7 +109,39 @@ const [showPayment, setShowPayment] = useState(false);
   return (
     <div style={styles.page}>
       <nav style={styles.nav}>
-        <h1>SeviTrusted</h1>
+        <div
+  style={{
+    position: 'relative',
+    display: 'inline-block',
+    overflow: 'hidden',
+  }}
+>
+  <div
+    style={{
+      position: 'absolute',
+      top: '-40%',
+      left: '-120%',
+      width: '250%',
+      height: '200%',
+      background:
+        'linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent)',
+      filter: 'blur(18px)',
+      animation: 'flameMove 3s linear infinite',
+      pointerEvents: 'none',
+    }}
+  />
+
+  <h1
+    style={{
+      margin: 0,
+      fontSize: '24px',
+      position: 'relative',
+      zIndex: 2,
+    }}
+  >
+    SeviTrusted
+  </h1>
+</div>
       </nav>
 
       {!showForm ? (
