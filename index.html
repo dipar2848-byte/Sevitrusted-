@@ -2,11 +2,115 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SeviTrusted</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0E7C86" />
+
+    <!-- Primary Meta Tags -->
+    <title>SeviTrusted Clinic — Premium Healthcare Built Around You</title>
+    <meta name="title" content="SeviTrusted Clinic — Premium Healthcare Built Around You" />
+    <meta
+      name="description"
+      content="Experience modern healthcare with expert specialists, seamless appointment booking, digital patient support, and personalized treatment plans designed around your needs."
+    />
+    <meta
+      name="keywords"
+      content="clinic, healthcare, doctors, appointment booking, cardiology, pediatrics, dermatology, orthopedics, physiotherapy, diagnostics, preventive health, telemedicine"
+    />
+    <meta name="author" content="SeviTrusted Clinic" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://sevitrusted.example.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sevitrusted.example.com/" />
+    <meta property="og:title" content="SeviTrusted Clinic — Premium Healthcare Built Around You" />
+    <meta
+      property="og:description"
+      content="Personalized care, trusted doctors, and smarter health management. Book your consultation with modern, technology-enabled healthcare."
+    />
+    <meta property="og:image" content="https://sevitrusted.example.com/social-preview.svg" />
+    <meta property="og:site_name" content="SeviTrusted Clinic" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://sevitrusted.example.com/" />
+    <meta name="twitter:title" content="SeviTrusted Clinic — Premium Healthcare Built Around You" />
+    <meta
+      name="twitter:description"
+      content="Personalized care, trusted doctors, and smarter health management. Book your consultation today."
+    />
+    <meta name="twitter:image" content="https://sevitrusted.example.com/social-preview.svg" />
+
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data: Medical Clinic + Local Business -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        "name": "SeviTrusted Clinic",
+        "description": "Premium, technology-enabled healthcare clinic offering personalized care, trusted specialists, and smarter health management.",
+        "url": "https://sevitrusted.example.com/",
+        "logo": "https://sevitrusted.example.com/favicon.svg",
+        "image": "https://sevitrusted.example.com/social-preview.svg",
+        "telephone": "+1-800-738-487",
+        "email": "care@sevitrusted.com",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "221 Wellness Avenue, Suite 400",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "postalCode": "94107",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 37.7749,
+          "longitude": -122.4194
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "20:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday", "Sunday"],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ],
+        "medicalSpecialty": [
+          "GeneralPractice",
+          "Pediatric",
+          "Cardiovascular",
+          "Dermatology",
+          "Orthopedic",
+          "Physiotherapy"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "2148"
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

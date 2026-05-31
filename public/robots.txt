@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sevitrusted.example.com/sitemap.xml
