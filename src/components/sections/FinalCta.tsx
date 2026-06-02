@@ -6,41 +6,46 @@ import {
   MessageCircle,
   CheckCircle2,
   User,
-  Mail,
+  Smartphone,
   Stethoscope,
   CalendarDays,
 } from "lucide-react";
+import { CLINIC, DEFAULT_WA_MESSAGE, telHref, whatsappHref } from "../../lib/site";
 import {
-  CLINIC,
-  DEFAULT_WA_MESSAGE,
-  telHref,
-  whatsappHref,
-} from "../../lib/site";
-import { SERVICES } from "../../data/content";
+  GENERAL_TREATMENTS,
+  SPECIALISED_TREATMENTS,
+} from "../../data/content";
 import { EASE, fadeUp, staggerContainer, viewportOnce } from "../../lib/motion";
+
+const TREATMENT_OPTIONS = [
+  ...GENERAL_TREATMENTS.items,
+  ...SPECIALISED_TREATMENTS.items,
+];
 
 interface FormState {
   name: string;
-  email: string;
-  service: string;
+  phone: string;
+  treatment: string;
   date: string;
 }
 
+const emptyForm = (): FormState => ({
+  name: "",
+  phone: "",
+  treatment: TREATMENT_OPTIONS[0],
+  date: "",
+});
+
 export function FinalCta() {
-  const [form, setForm] = useState<FormState>({
-    name: "",
-    email: "",
-    service: SERVICES[0].title,
-    date: "",
-  });
+  const [form, setForm] = useState<FormState>(emptyForm);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [submitted, setSubmitted] = useState(false);
 
   const validate = () => {
     const next: typeof errors = {};
     if (!form.name.trim()) next.name = "Please enter your name.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
-      next.email = "Enter a valid email address.";
+    if (!/^[0-9+\-\s]{7,15}$/.test(form.phone.trim()))
+      next.phone = "Enter a valid phone number.";
     if (!form.date) next.date = "Pick a preferred date.";
     setErrors(next);
     return Object.keys(next).length === 0;
@@ -71,26 +76,29 @@ export function FinalCta() {
               variants={fadeUp}
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white/90 backdrop-blur"
             >
-              Get Started Today
+              Book Your Visit
             </motion.span>
             <motion.h2
               variants={fadeUp}
               className="mt-5 text-3xl font-bold leading-[1.1] text-white sm:text-4xl lg:text-[2.75rem]"
             >
-              Ready to Experience Better Healthcare?
+              Ready to Visit CNM Clinic?
             </motion.h2>
             <motion.p
               variants={fadeUp}
               className="mt-4 max-w-md text-base leading-relaxed text-white/75 sm:text-lg"
             >
-              Book your consultation today and experience healthcare designed
-              around your needs.
+              Book your consultation today. Call us or message on WhatsApp, or
+              fill in the form and we will confirm your appointment.
             </motion.p>
 
             <motion.div variants={fadeUp} className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a href={telHref(CLINIC.phoneRaw)} className="btn bg-white text-primary-700 hover:bg-white/90">
+              <a
+                href={telHref(CLINIC.phoneRaw)}
+                className="btn bg-white text-primary-700 hover:bg-white/90"
+              >
                 <Phone className="h-4 w-4" />
-                Call Now
+                Call {CLINIC.phoneDisplay}
               </a>
               <a
                 href={whatsappHref(CLINIC.whatsappRaw, DEFAULT_WA_MESSAGE)}
@@ -109,20 +117,20 @@ export function FinalCta() {
             >
               <span className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-accent-400" />
-                No waiting rooms
+                Experienced doctors
               </span>
               <span className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-accent-400" />
-                Instant confirmation
+                General &amp; specialised care
               </span>
               <span className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-accent-400" />
-                Secure & private
+                Easy to reach
               </span>
             </motion.div>
           </motion.div>
 
-          {/* Booking / lead capture form */}
+          {/* Booking form */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -140,15 +148,15 @@ export function FinalCta() {
                 >
                   <CheckCircle2 className="h-8 w-8" />
                 </motion.span>
-                <h3 className="mt-5 text-xl font-bold text-ink">Request received!</h3>
+                <h3 className="mt-5 text-xl font-bold text-ink">Request received</h3>
                 <p className="mt-2 max-w-xs text-sm text-ink-muted">
-                  Thank you, {form.name.split(" ")[0]}. Our team will confirm your
-                  appointment shortly via email and WhatsApp.
+                  Thank you, {form.name.split(" ")[0]}. The clinic will contact you
+                  on the number provided to confirm your appointment.
                 </p>
                 <button
                   onClick={() => {
                     setSubmitted(false);
-                    setForm({ name: "", email: "", service: SERVICES[0].title, date: "" });
+                    setForm(emptyForm());
                   }}
                   className="btn-secondary mt-6"
                 >
@@ -160,7 +168,7 @@ export function FinalCta() {
                 <div>
                   <h3 className="text-lg font-bold text-ink">Book an Appointment</h3>
                   <p className="text-sm text-ink-muted">
-                    Fill in your details — it takes 30 seconds.
+                    Share a few details and we will call you back.
                   </p>
                 </div>
 
@@ -176,38 +184,43 @@ export function FinalCta() {
                     autoComplete="name"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="Jane Doe"
+                    placeholder="Your name"
                     className="w-full bg-transparent text-sm text-ink outline-none placeholder:text-slate-400"
                   />
                 </Field>
 
                 <Field
-                  id="email"
-                  label="Email address"
-                  icon={<Mail className="h-4 w-4" />}
-                  error={errors.email}
+                  id="phone"
+                  label="Phone number"
+                  icon={<Smartphone className="h-4 w-4" />}
+                  error={errors.phone}
                 >
                   <input
-                    id="email"
-                    type="email"
-                    autoComplete="email"
-                    value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    placeholder="jane@email.com"
+                    id="phone"
+                    type="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    placeholder="Your mobile number"
                     className="w-full bg-transparent text-sm text-ink outline-none placeholder:text-slate-400"
                   />
                 </Field>
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <Field id="service" label="Service" icon={<Stethoscope className="h-4 w-4" />}>
+                  <Field
+                    id="treatment"
+                    label="Treatment"
+                    icon={<Stethoscope className="h-4 w-4" />}
+                  >
                     <select
-                      id="service"
-                      value={form.service}
-                      onChange={(e) => setForm({ ...form, service: e.target.value })}
+                      id="treatment"
+                      value={form.treatment}
+                      onChange={(e) => setForm({ ...form, treatment: e.target.value })}
                       className="w-full bg-transparent text-sm text-ink outline-none"
                     >
-                      {SERVICES.map((s) => (
-                        <option key={s.title}>{s.title}</option>
+                      {TREATMENT_OPTIONS.map((t) => (
+                        <option key={t}>{t}</option>
                       ))}
                     </select>
                   </Field>
@@ -229,11 +242,11 @@ export function FinalCta() {
                 </div>
 
                 <button type="submit" className="btn-primary group w-full">
-                  Confirm Booking
+                  Request Appointment
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </button>
                 <p className="text-center text-xs text-ink-muted">
-                  By booking you agree to our privacy policy. We never share your data.
+                  We will only use your details to contact you about your visit.
                 </p>
               </form>
             )}

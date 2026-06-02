@@ -1,18 +1,18 @@
-# SeviTrusted Clinic — Premium Healthcare Website
+# CNM Clinic — Clinic Website
 
-A production-ready, **mobile-first**, conversion-optimized clinic website built to feel closer to Apple, Stripe, Linear, and Vercel than a traditional hospital site.
-
-Designed to maximize **appointment bookings, consultation requests, WhatsApp inquiries, phone calls, trust, and lead generation**.
+A clean, **mobile-first**, professional website for **CNM Clinic**, Kamothe, Navi Mumbai.
+Built to clearly present the clinic's real treatments, doctors, and contact details
+and to make booking an appointment simple.
 
 ---
 
 ## ✨ Tech Stack
 
-- **Vite** — lightning-fast build tooling
+- **Vite** — fast build tooling
 - **React 18 + TypeScript** — type-safe, component-driven architecture
-- **Tailwind CSS** — custom premium design system
-- **Framer Motion** — cinematic, scroll-triggered animations
-- **Lucide React** — modern iconography
+- **Tailwind CSS** — custom, minimal design system
+- **Framer Motion** — subtle, professional animations
+- **Lucide React** — clean iconography
 
 ---
 
@@ -26,51 +26,31 @@ Designed to maximize **appointment bookings, consultation requests, WhatsApp inq
 | Background  | `#F8FAFC` |
 | Text        | `#0F172A` |
 
-Features soft gradients, glassmorphism, large rounded corners, premium shadows,
-layered depth, strong typographic hierarchy, and spacious layouts.
-
 ---
 
 ## 🧩 Sections
 
-1. **Hero** — headline, dual CTAs, floating trust cards, parallax, animated portrait
-2. **Trust Indicators** — animated counting stats (10,000+ patients, 50+ specialists, 98% satisfaction, 15+ years)
-3. **Services** — 8 premium animated service cards with benefits + CTA
-4. **Doctor Showcase** — filterable specialist profiles with credentials & availability
-5. **Automation Ecosystem** — animated interconnected workflow (AI receptionist, WhatsApp, CRM, analytics…)
-6. **How It Works** — animated 4-step timeline
-7. **Testimonials** — auto-rotating, touch-friendly carousel
-8. **Facility Showcase** — masonry gallery with lightbox
-9. **FAQ** — animated accordion
-10. **Final CTA** — high-converting lead-capture form with smart validation + Call / WhatsApp buttons
-11. **Footer** — address, contact, social, legal, emergency, quick links
+1. **Hero** — clinic intro, location & hours, primary CTAs (honest, no inflated claims)
+2. **Treatments** — two clearly grouped, real lists:
+   - **General Treatments:** Fever · Body pain · Cold & cough · Stomach pain · Weakness · Hair fall · Women's health issues
+   - **Specialised Treatments:** Piles · Fissure · Fistula · Abscess · Sexual health disorders · Kidney stones · Hydrocele
+3. **Doctors** — the real consulting physicians: **Dr. Nitin MS** and **Dr. Ramita Rathod**
+4. **About** — honest, value-based description of the clinic
+5. **FAQ** — factual answers about booking, treatments, and location
+6. **Contact / Book** — appointment request form (name, phone, treatment, date) + Call & WhatsApp
+7. **Footer** — structured contact details:
+   - **Address:** Shop No. 2, Manisha Apartment, Near Ramsheth Thakur School, Sector 6A, Kamothe, Panvel, Navi Mumbai – 410209
+   - **Phone:** 07738078241 (clickable `tel:` link)
 
 ---
 
-## 🚀 Conversion Features
+## 📞 Contact
 
-- Sticky mobile booking action bar
-- Floating WhatsApp + persistent call buttons (with pulse animation)
-- Lead-capture booking form with live validation
-- Trust badges, doctor credentials, review indicators
-- Conversion-focused CTAs throughout
+All contact details live in **`src/lib/site.ts`** and treatment/doctor content in
+**`src/data/content.ts`** — edit these two files to update the site.
 
----
-
-## 📱 Mobile-First
-
-Optimized for `320 / 360 / 390 / 412 / 430 / 768px`. No horizontal scroll,
-large tap targets (≥48px), safe-area aware, thumb-friendly navigation.
-
----
-
-## 🔍 SEO & Performance
-
-- Full metadata, Open Graph & Twitter cards
-- `MedicalClinic` + `LocalBusiness` structured data (JSON-LD)
-- `robots.txt`, `sitemap.xml`, `site.webmanifest`, SVG favicon & social preview
-- Code splitting (vendor / motion / icons chunks), lazy reveals, reduced-motion support
-- Accessible focus states, semantic HTML, ARIA labels
+- Phone: `07738078241` → dials `+917738078241`
+- WhatsApp: opens chat to `+917738078241`
 
 ---
 
@@ -90,19 +70,17 @@ npm run preview  # preview the production build
 ```
 src/
 ├── components/
-│   ├── sections/      # Hero, Stats, Services, Doctors, Automation, …
-│   ├── ui/            # Reveal, SectionHeader, Counter
+│   ├── sections/      # Hero, Services (treatments), Doctors, About, Faq, FinalCta, Footer
+│   ├── ui/            # SectionHeader, Reveal
 │   ├── Navbar.tsx
 │   ├── FloatingActions.tsx
 │   └── ScrollProgress.tsx
-├── data/content.ts    # all editable content (services, doctors, FAQs…)
-├── lib/               # site config + motion presets
+├── data/content.ts    # real treatments, doctors, FAQs
+├── lib/               # site config (contact) + motion presets
 ├── App.tsx
 └── main.tsx
 ```
 
-> Edit clinic contact details in `src/lib/site.ts` and content in `src/data/content.ts`.
-
 ---
 
-© SeviTrusted Clinic. Built for a real healthcare business, production-ready.
+© CNM Clinic, Kamothe, Navi Mumbai.

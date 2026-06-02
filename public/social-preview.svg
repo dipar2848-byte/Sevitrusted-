@@ -16,10 +16,10 @@
   <g transform="translate(96,150)">
     <rect width="84" height="84" rx="22" fill="url(#badge)"/>
     <path d="M30 30h12v12h12v12H42v12H30V54H18V42h12z" fill="#fff"/>
-    <text x="108" y="40" font-family="Plus Jakarta Sans, Inter, sans-serif" font-size="40" font-weight="800" fill="#ffffff">SeviTrusted Clinic</text>
-    <text x="108" y="72" font-family="Inter, sans-serif" font-size="22" fill="rgba(255,255,255,0.78)">Premium · Technology-enabled · Patient-first</text>
+    <text x="108" y="40" font-family="Plus Jakarta Sans, Inter, sans-serif" font-size="40" font-weight="800" fill="#ffffff">CNM Clinic</text>
+    <text x="108" y="72" font-family="Inter, sans-serif" font-size="22" fill="rgba(255,255,255,0.78)">Kamothe · Navi Mumbai · Patient-first care</text>
   </g>
-  <text x="96" y="360" font-family="Plus Jakarta Sans, Inter, sans-serif" font-size="78" font-weight="800" fill="#ffffff">Healthcare Built</text>
-  <text x="96" y="450" font-family="Plus Jakarta Sans, Inter, sans-serif" font-size="78" font-weight="800" fill="#A4F4EA">Around You.</text>
-  <text x="96" y="520" font-family="Inter, sans-serif" font-size="28" fill="rgba(255,255,255,0.82)">Personalized care · Trusted doctors · Smarter health management</text>
+  <text x="96" y="360" font-family="Plus Jakarta Sans, Inter, sans-serif" font-size="74" font-weight="800" fill="#ffffff">Trusted Care,</text>
+  <text x="96" y="446" font-family="Plus Jakarta Sans, Inter, sans-serif" font-size="74" font-weight="800" fill="#A4F4EA">Close to Home.</text>
+  <text x="96" y="516" font-family="Inter, sans-serif" font-size="26" fill="rgba(255,255,255,0.82)">General &amp; specialised treatment · Experienced doctors</text>
 </svg>
