@@ -1,9 +1,9 @@
 {
-  "name": "sevitrusted-clinic",
+  "name": "cnm-clinic",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Premium conversion-focused clinic website built with Vite, React, TypeScript, Tailwind CSS and Framer Motion.",
+  "description": "CNM Clinic — clean, mobile-first clinic website (Vite, React, TypeScript, Tailwind CSS, Framer Motion).",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc -b && vite build",

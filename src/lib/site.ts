@@ -1,16 +1,14 @@
 // Central place for clinic contact details + conversion links.
 export const CLINIC = {
-  name: "SeviTrusted Clinic",
-  shortName: "SeviTrusted",
-  tagline: "Healthcare Built Around You",
-  phoneDisplay: "+1 (800) 738-487",
-  phoneRaw: "+1800738487",
-  whatsappRaw: "1800738487",
-  email: "care@sevitrusted.com",
-  address: "221 Wellness Avenue, Suite 400, San Francisco, CA 94107",
-  emergencyDisplay: "+1 (800) 911-4357",
-  emergencyRaw: "+18009114357",
-  hours: "Mon–Fri 8:00–20:00 · Sat–Sun 9:00–17:00",
+  name: "CNM Clinic",
+  shortName: "CNM",
+  tagline: "Trusted Care, Close to Home",
+  phoneDisplay: "07738078241",
+  phoneRaw: "+917738078241",
+  whatsappRaw: "917738078241",
+  address:
+    "Shop No. 2, Manisha Apartment, Near Ramsheth Thakur School, Sector 6A, Kamothe, Panvel, Navi Mumbai – 410209",
+  hours: "Open Daily · Morning & Evening Consultations",
 } as const;
 
 export const telHref = (raw: string) => `tel:${raw}`;
@@ -21,13 +19,12 @@ export const whatsappHref = (raw: string, message?: string) =>
   }`;
 
 export const DEFAULT_WA_MESSAGE =
-  "Hi SeviTrusted Clinic 👋 I'd like to book an appointment.";
+  "Hello CNM Clinic, I would like to book an appointment.";
 
 export const NAV_LINKS = [
   { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
+  { label: "Treatments", href: "#services" },
   { label: "Doctors", href: "#doctors" },
   { label: "About", href: "#about" },
-  { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ] as const;

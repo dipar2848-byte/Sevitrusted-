@@ -1,28 +1,34 @@
 import { motion } from "framer-motion";
-import { Heart, ShieldCheck, Microscope, Users, BadgeCheck } from "lucide-react";
+import {
+  Heart,
+  ShieldCheck,
+  Stethoscope,
+  MapPin,
+  BadgeCheck,
+} from "lucide-react";
 import { SectionHeader } from "../ui/SectionHeader";
 import { fadeUp, staggerContainer, viewportOnce } from "../../lib/motion";
 
 const VALUES = [
   {
     icon: Heart,
-    title: "Human-Centered Care",
-    text: "Every plan is built around your life, not the other way around.",
+    title: "Patient-First Care",
+    text: "We take time to listen and explain your treatment clearly.",
+  },
+  {
+    icon: Stethoscope,
+    title: "General & Specialised",
+    text: "Everyday conditions and focused specialised treatment in one place.",
   },
   {
     icon: ShieldCheck,
-    title: "Trusted & Certified",
-    text: "Board-certified specialists and rigorous safety standards.",
+    title: "Comfort & Trust",
+    text: "A calm, clean, and welcoming clinic environment for every visit.",
   },
   {
-    icon: Microscope,
-    title: "Modern Technology",
-    text: "Digital records, fast diagnostics, and seamless follow-ups.",
-  },
-  {
-    icon: Users,
-    title: "Whole-Family Health",
-    text: "From pediatrics to senior care — one trusted home for everyone.",
+    icon: MapPin,
+    title: "Easy to Reach",
+    text: "Conveniently located in Sector 6A, Kamothe, Navi Mumbai.",
   },
 ];
 
@@ -34,15 +40,15 @@ export function About() {
           <div>
             <SectionHeader
               align="left"
-              eyebrow="About SeviTrusted"
+              eyebrow="About CNM Clinic"
               icon={<BadgeCheck className="h-3.5 w-3.5" />}
               title={
                 <>
-                  Premium healthcare with a{" "}
+                  Dependable healthcare with a{" "}
                   <span className="text-gradient">human touch.</span>
                 </>
               }
-              subtitle="For over 15 years, we've combined leading medical expertise with technology that removes friction — so you spend less time waiting and more time healing."
+              subtitle="CNM Clinic provides reliable general and specialised treatment for the Kamothe community, focused on careful diagnosis, clear guidance, and patient comfort."
             />
 
             <motion.div
@@ -99,8 +105,8 @@ export function About() {
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -bottom-5 left-1/2 -translate-x-1/2 rounded-2xl border border-white/60 bg-white/90 px-5 py-3 text-center shadow-premium backdrop-blur-xl"
             >
-              <p className="text-xl font-extrabold text-gradient">15+ Years</p>
-              <p className="text-xs text-ink-muted">Caring for our community</p>
+              <p className="text-lg font-extrabold text-gradient">CNM Clinic</p>
+              <p className="text-xs text-ink-muted">Kamothe, Navi Mumbai</p>
             </motion.div>
           </motion.div>
         </div>

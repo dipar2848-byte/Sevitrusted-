@@ -1,7 +1,7 @@
 {
-  "name": "SeviTrusted Clinic",
-  "short_name": "SeviTrusted",
-  "description": "Premium healthcare built around you. Personalized care, trusted doctors, smarter health management.",
+  "name": "CNM Clinic",
+  "short_name": "CNM Clinic",
+  "description": "Reliable general and specialised treatment in Kamothe, Navi Mumbai.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F8FAFC",
